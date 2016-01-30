@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>This is a new blog | Hexo</title>
+  <title>在Windows平台上安装Node.js及NPM模块管理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="new blog">
+  <meta name="description" content="在Windows平台上安装Node.js及NPM模块管理操作步骤:
+下载Node.js官方Windows版程序,从0.6.1开始，Node.js在Windows平台上提供了两种安装方式，一是.MSI安装文件，另外还有一个.EXE可执行文件。我选择了.EXE文件。因为.MSI安装文件除了将node.exe复制到C:\Program File (x86)\目录中及修改系统Path之外，没发现还有其他作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="This is a new blog">
+<meta property="og:title" content="在Windows平台上安装Node.js及NPM模块管理">
 <meta property="og:url" content="http://yoursite.com/2016/01/30/This-is-a-new-blog/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="new blog">
-<meta property="og:updated_time" content="2016-01-30T06:19:49.095Z">
+<meta property="og:description" content="在Windows平台上安装Node.js及NPM模块管理操作步骤:
+下载Node.js官方Windows版程序,从0.6.1开始，Node.js在Windows平台上提供了两种安装方式，一是.MSI安装文件，另外还有一个.EXE可执行文件。我选择了.EXE文件。因为.MSI安装文件除了将node.exe复制到C:\Program File (x86)\目录中及修改系统Path之外，没发现还有其他作">
+<meta property="og:updated_time" content="2016-01-30T09:39:20.220Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="This is a new blog">
-<meta name="twitter:description" content="new blog">
+<meta name="twitter:title" content="在Windows平台上安装Node.js及NPM模块管理">
+<meta name="twitter:description" content="在Windows平台上安装Node.js及NPM模块管理操作步骤:
+下载Node.js官方Windows版程序,从0.6.1开始，Node.js在Windows平台上提供了两种安装方式，一是.MSI安装文件，另外还有一个.EXE可执行文件。我选择了.EXE文件。因为.MSI安装文件除了将node.exe复制到C:\Program File (x86)\目录中及修改系统Path之外，没发现还有其他作">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -74,7 +77,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      This is a new blog
+      在Windows平台上安装Node.js及NPM模块管理
     </h1>
   
 
@@ -82,13 +85,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="new_blog"><a href="#new_blog" class="headerlink" title="new blog"></a>new blog</h2>
+        <h2 id="u5728Windows_u5E73_u53F0_u4E0A_u5B89_u88C5Node-js_u53CANPM_u6A21_u5757_u7BA1_u7406"><a href="#u5728Windows_u5E73_u53F0_u4E0A_u5B89_u88C5Node-js_u53CANPM_u6A21_u5757_u7BA1_u7406" class="headerlink" title="在Windows平台上安装Node.js及NPM模块管理"></a>在Windows平台上安装Node.js及NPM模块管理</h2><h3 id="u64CD_u4F5C_u6B65_u9AA4_3A"><a href="#u64CD_u4F5C_u6B65_u9AA4_3A" class="headerlink" title="操作步骤:"></a>操作步骤:</h3><ol>
+<li><p>下载<a href="http://nodejs.org/#download" target="_blank" rel="external">Node.js</a><br>官方Windows版程序,从0.6.1开始，Node.js在Windows平台上提供了两种安装方式，一是.MSI安装文件，另外还有一个.EXE可执行文件。<br>我选择了.EXE文件。因为.MSI安装文件除了将node.exe复制到C:\Program File (x86)\目录中及修改系统Path之外，没发现还有其他作用。</p>
+</li>
+<li><p>创建D:\nodejs目录，并将node.exe保存在这个目录中。并将”D:\nodejs”加入系统环境变量PATH中，便于在任意位置执行node应用。</p>
+</li>
+<li><p>下载<a href="https://github.com/isaacs/npm/tags" target="_blank" rel="external">npm源代码</a>：</p>
+</li>
+<li><p>将npm源代码解压到D:\npmjs目录中。<br>在命令提示符窗口中执行下面的操作，完成npm的安装：</p>
+<p>D:>cd npmjs</p>
+<p>D:\npmjs&gt;node cli.js install -gf<br>另外：</p>
+</li>
+</ol>
+<p>node cli.js install npm -gf //可以安装最新版的NPM<br>node cli.js install npm@1.0.105 -gf //可以安装指定版本的NPM</p>
+<p>   上面两种方法都是通过网络从代码库中下载并安装，但是代码库一般只保留最近的两个版本。</p>
+<ol>
+<li>NPM安装完成后，将”D:\nodejs\node_modules”加入系统环境变量NODE_PATH中。</li>
+</ol>
+<ol>
+<li>安装express：</li>
+</ol>
+<p>npm install express -g //安装最新版express<br>npm install express@2.5.0 //安装指定版本express<br>npm remove express -g //删除express<br>   更多npm使用方法，请参考<a href="http://npmjs.org" target="_blank" rel="external">npm官方网站</a></p>
+<p>至此部署完成。</p>
+<p>复制代码</p>
+<p>D:>node -v<br>v0.6.2</p>
+<p>D:>npm -v<br>1.0.104</p>
+<p>D:>express -v<br>2.5.1</p>
+<p>D:>express hello //创建exrpess项目<br>D:>cd hello<br>D:\hello&gt;node app.js //启动<br>复制代码<br>在浏览器中打开：<a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a>，查看结果。</p>
+<p>补充：npm源代码包中不包含依赖模块。为了方便大家安装，这里提供<a href="http://files.cnblogs.com/seanlv/node_modules.zip" target="_blank" rel="external">下载</a></p>
+<p>下载后，覆盖npm目录中的node_modules文件夹。</p>
+
       
     </div>
     <footer class="article-footer">
       <a data-url="http://yoursite.com/2016/01/30/This-is-a-new-blog/" data-id="cik0qc7gt0000y0lioydo9x3k" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习记录/">学习记录</a></li></ul>
+
     </footer>
   </div>
   
@@ -117,8 +151,22 @@
     
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习记录/">学习记录</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/学习记录/" style="font-size: 10px;">学习记录</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -140,7 +188,7 @@
           </li>
         
           <li>
-            <a href="/2016/01/30/This-is-a-new-blog/">This is a new blog</a>
+            <a href="/2016/01/30/This-is-a-new-blog/">在Windows平台上安装Node.js及NPM模块管理</a>
           </li>
         
       </ul>
